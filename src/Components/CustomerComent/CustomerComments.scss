@@ -1,0 +1,39 @@
+@import "../../Colors.scss";
+.reviewDiv {
+  width: 95%;
+  max-width: 600px;
+  min-height: 60px;
+  border: 1px solid red;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  .avtar {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid $primary_color;
+    margin-right: 10px;
+  }
+  .contentdiv {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    h1 {
+      font-weight: 400;
+      margin-right: 5px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+    p {
+      font-size: 12px;
+      color: grey;
+    }
+  }
+}

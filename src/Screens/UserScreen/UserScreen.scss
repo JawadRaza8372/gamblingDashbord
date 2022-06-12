@@ -1,0 +1,76 @@
+@import "../../Colors.scss";
+
+.myUserdiv {
+	width: 97%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+	.exportdiv {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: row;
+		margin-top: calc(1vh + 20px);
+		.tableheading {
+			font-size: calc(1vw + 20px);
+			text-align: center;
+			font-weight: bold;
+			color: $secondry_color;
+		}
+		button {
+			width: 100px;
+			height: 50px;
+			font-size: 20px;
+			font-weight: bold;
+			border: 2px solid $primary_color;
+			color: $primary_color;
+			&:hover {
+				background-color: $primary_color;
+				color: $secondry_color;
+			}
+		}
+	}
+	table {
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: calc(1vh + 20px);
+		th {
+			background-color: $primary_color;
+			color: $secondry_color;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+	table,
+	th,
+	td {
+		border: 1px solid $secondry_color;
+		border-collapse: collapse !important;
+		font-size: 25px;
+	}
+}
+// .usercont {
+// 	@include gridSystem(4);
+// 	height: 100%;
+// 	overflow-y: auto;
+// 	overflow-x: hidden;
+// 	padding: 20px 0;
+// }
+// @media only screen and (max-width: 992px) {
+// 	.usercont {
+// 		@include gridSystem(3);
+// 	}
+// }
+// @media only screen and (max-width: 768px) {
+// 	.usercont {
+// 		@include gridSystem(2);
+// 	}
+// }
+// @media only screen and (max-width: 600px) {
+// 	.usercont {
+// 		@include gridSystem(1);
+// 	}
+// }
