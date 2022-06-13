@@ -5,6 +5,7 @@ import CustomModel from "../CustomModel/CustomModel";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import OrderTableData from "../../Components/OrderTableData/OrderTableData";
+import { auth } from "../../Database/FirebseConfig";
 
 function CustomerTableData({ id, name, email, number, identityNumbr }) {
 	const [show, setShow] = useState(false);
@@ -31,13 +32,6 @@ function CustomerTableData({ id, name, email, number, identityNumbr }) {
 				<td>{email}</td>
 				<td>{number}</td>
 				<td>{identityNumbr}</td>
-				<td>
-					<ButtonsDiv
-						deltFun={employdeltfunc}
-						morefunct={() => setShow(!show)}
-						sectit='Ban'
-					/>
-				</td>
 			</tr>
 			<CustomModel showModel={show} toggleModel={() => setShow(!show)}>
 				<div className='btndiv'>

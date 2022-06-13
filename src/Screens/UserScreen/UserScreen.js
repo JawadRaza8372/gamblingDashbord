@@ -26,7 +26,6 @@ function UserScreen() {
 							<th>Email</th>
 							<th>Phone</th>
 							<th>User ID</th>
-							<th>Actions</th>
 						</tr>
 						{employs.map((dat) => {
 							if (dat.name && dat.email) {

@@ -10,7 +10,8 @@ import PendingOrderScreen from "../Screens/PendingOrders/PendingOrderScreen";
 import CompletedOrderScreen from "../Screens/CompletedOrders/CompletedOrderScreen";
 import SendNotification from "../Screens/SendNotification/SendNotification";
 import ErrorPage from "../Screens/ErrorPage/ErrorPage";
-
+import ChatScreen from "../Screens/ChatScreen/ChatScreen";
+import ChatListScreen from "../Screens/ChatListScreen/ChatListScreen";
 function Routess() {
 	return (
 		<Routes>
@@ -72,10 +73,26 @@ function Routess() {
 				}
 			/>
 			<Route
+				path='/chat'
+				element={
+					<ProtectedRoute>
+						<ChatListScreen />
+					</ProtectedRoute>
+				}
+			/>
+			<Route
 				path='/order/:id'
 				element={
 					<ProtectedRoute>
 						<OrderDetailScreen />
+					</ProtectedRoute>
+				}
+			/>
+			<Route
+				path='/chat/:id'
+				element={
+					<ProtectedRoute>
+						<ChatScreen />
 					</ProtectedRoute>
 				}
 			/>

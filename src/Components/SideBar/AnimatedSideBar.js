@@ -7,6 +7,8 @@ import PersonIcon from "@material-ui/icons/Person";
 import LogoutIcon from "@material-ui/icons/ExitToApp";
 import CloseIcon from "@material-ui/icons/Close";
 import DirectionsCar from "@material-ui/icons/DirectionsCar";
+import ChatIcon from "@material-ui/icons/ChatOutlined";
+
 import LinkButton from "./LinkButton";
 import { setAuth } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
@@ -27,6 +29,11 @@ function AnimatedSideBar({ children }) {
 			title: "Completed",
 			icon: <PlaylistAddCheckIcon id='navIcon' />,
 			link: "/completed_order",
+		},
+		{
+			title: "Chat",
+			icon: <ChatIcon id='navIcon' />,
+			link: "/chat",
 		},
 		{
 			title: "Pending",

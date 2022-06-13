@@ -2,7 +2,7 @@ import Navigation from "./Navigation/Navigation";
 import { useEffect } from "react";
 import { auth, db } from "./Database/FirebseConfig";
 import { useDispatch, useSelector } from "react-redux";
-import { setEmploys } from "./store/projectSlice";
+import { setEmploys, setChat } from "./store/projectSlice";
 import { setAuth } from "./store/authSlice";
 const apiurl = "https://rentalsystem1998.herokuapp.com";
 
@@ -15,6 +15,19 @@ function App() {
 		if (cat) {
 			dispatch(setAuth({ isAuth: "avalble" }));
 		}
+		db.collection("chatSupport").onSnapshot((snapshot) => {
+			dispatch(
+				setChat({
+					mesg: snapshot.docs.map((doc) => ({
+						id: doc.id,
+						customer: doc.data().customer,
+						email: doc.data().email,
+						admin: doc.data().admin,
+						messages: doc.data().messages,
+					})),
+				})
+			);
+		});
 		db.collection("users").onSnapshot((snapshot) => {
 			dispatch(
 				setEmploys({

@@ -98,8 +98,8 @@ function AddUserScreen() {
 					type={"text"}
 					placeholder='lottery Number'
 					id='lotteryNumber'
-					minLength={6}
-					maxLength={6}
+					minLength={5}
+					maxLength={5}
 					value={formSubmit.lotteryNumber}
 					onChange={handleChange}
 				/>
