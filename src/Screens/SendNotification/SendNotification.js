@@ -11,7 +11,7 @@ function SendNotification() {
 	const { mytokens } = useSelector((state) => state.project);
 	const adduserfunc = async (e) => {
 		e.preventDefault();
-		const rest = await axios.post(`/send`, {
+		const rest = await axios.post(`https://exp.host/--/api/v2/push/send`, {
 			to: mytokens,
 			title: formSubmit.title,
 			body: formSubmit.msg,
