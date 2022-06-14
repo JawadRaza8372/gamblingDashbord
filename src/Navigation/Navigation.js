@@ -2,7 +2,6 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Routess from "./Routess";
 import AnimatedSideBar from "../Components/SideBar/AnimatedSideBar";
-import Loader from "../Components/Loader/Loader";
 function Navigation() {
 	const location = useLocation()?.pathname;
 	// if (isLoading) {

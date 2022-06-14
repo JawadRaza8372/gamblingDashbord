@@ -12,9 +12,6 @@ import ChatIcon from "@material-ui/icons/ChatOutlined";
 import LinkButton from "./LinkButton";
 import { setAuth } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
-import PlaylistAddCheckIcon from "@material-ui/icons/PlaylistAddCheck";
-import PlaylistRemoveIcon from "@material-ui/icons/DepartureBoard";
-import Loader from "../Loader/Loader";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 function AnimatedSideBar({ children }) {
 	const navigate = useNavigate();
@@ -26,19 +23,9 @@ function AnimatedSideBar({ children }) {
 		{ title: "Users", icon: <PersonIcon id='navIcon' />, link: "/userList" },
 		// { title: "Orders", icon: <MenuBook id="navIcon" />, link: "/orders" },
 		{
-			title: "Completed",
-			icon: <PlaylistAddCheckIcon id='navIcon' />,
-			link: "/completed_order",
-		},
-		{
 			title: "Chat",
 			icon: <ChatIcon id='navIcon' />,
 			link: "/chat",
-		},
-		{
-			title: "Pending",
-			icon: <PlaylistRemoveIcon id='navIcon' />,
-			link: "/pending_orders",
 		},
 
 		{

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./AddUserScreen.scss";
-import axios from "axios";
-import { apiurl } from "../../App";
 import { db } from "../../Database/FirebseConfig";
 
 function AddUserScreen() {

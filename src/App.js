@@ -1,15 +1,14 @@
 import Navigation from "./Navigation/Navigation";
 import { useEffect } from "react";
-import { auth, db } from "./Database/FirebseConfig";
-import { useDispatch, useSelector } from "react-redux";
-import { setEmploys, setChat } from "./store/projectSlice";
+import { db } from "./Database/FirebseConfig";
+import { useDispatch } from "react-redux";
+import { setEmploys, setChat, setmyTokens } from "./store/projectSlice";
 import { setAuth } from "./store/authSlice";
 const apiurl = "https://rentalsystem1998.herokuapp.com";
 
 function App() {
 	const dispatch = useDispatch();
-	const { isAuth } = useSelector((state) => state.auth);
-	console.log(isAuth);
+
 	useEffect(() => {
 		const cat = localStorage.getItem("gamblingDasbord");
 		if (cat) {
@@ -28,6 +27,14 @@ function App() {
 				})
 			);
 		});
+		db.collection("Token").onSnapshot((snapshot) => {
+			let mysometoken = snapshot.docs.map((doc) => doc.data().Token);
+			dispatch(
+				setmyTokens({
+					tokens: mysometoken,
+				})
+			);
+		});
 		db.collection("users").onSnapshot((snapshot) => {
 			dispatch(
 				setEmploys({
@@ -42,7 +49,7 @@ function App() {
 				})
 			);
 		});
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<>

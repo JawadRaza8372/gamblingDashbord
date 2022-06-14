@@ -1,22 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	orders: [],
 	employs: [],
 	isLoading: false,
 	msgs: [],
 	mesg: [],
+	mytokens: [],
 };
 
 export const projectSlice = createSlice({
 	name: "project",
 	initialState,
 	reducers: {
-		setOrders: (state, action) => {
-			if (action.payload.orders === null) {
-				state.orders = [];
+		setmyTokens: (state, action) => {
+			if (action.payload.tokens === null) {
+				state.mytokens = [];
 			} else {
-				state.orders = action.payload.orders;
+				state.mytokens = action.payload.tokens;
 			}
 		},
 		setEmploys: (state, action) => {
@@ -51,7 +51,7 @@ export const projectSlice = createSlice({
 	},
 });
 
-export const { setOrders, setEmploys, setLoading, setChat, setMsgs } =
+export const { setEmploys, setLoading, setChat, setMsgs, setmyTokens } =
 	projectSlice.actions;
 
 export default projectSlice.reducer;

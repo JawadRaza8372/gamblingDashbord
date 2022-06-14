@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import "./SendNotification.scss";
 import axios from "axios";
-import { apiurl } from "../../App";
+import { useSelector } from "react-redux";
 
 function SendNotification() {
 	const [formSubmit, setformSubmit] = useState({
 		title: "",
 		msg: "",
 	});
+	const { mytokens } = useSelector((state) => state.project);
 	const adduserfunc = async (e) => {
 		e.preventDefault();
-		const rest = await axios.post(`${apiurl}/Notifications/`, {
-			...formSubmit,
-			id: "627b481fd842dce8deeaa59f",
+		const rest = await axios.post(`/send`, {
+			to: mytokens,
+			title: formSubmit.title,
+			body: formSubmit.msg,
 		});
 		console.log(rest);
-		if (rest.data.status === 200) {
+		if (rest.status === 200) {
 			alert("Notification sent");
 			setformSubmit({
 				title: "",
 				msg: "",
 			});
+		} else {
+			alert("Server Error");
 		}
 	};
 	const handleChange = (e) => {

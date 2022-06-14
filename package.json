@@ -2,6 +2,7 @@
 	"name": "gambledashbord",
 	"version": "0.1.0",
 	"private": true,
+	"proxy": "https://exp.host/--/api/v2/push",
 	"dependencies": {
 		"@material-ui/core": "^4.12.4",
 		"@material-ui/icons": "^4.11.3",

@@ -3,11 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import AuthScreen from "../Screens/AuthScreen/AuthScreen";
 import UserScreen from "../Screens/UserScreen/UserScreen";
 import AddUserScreen from "../Screens/AddUserScreen/AddUserScreen";
-import OrderScreen from "../Screens/OrderScreen/OrderScreen";
-import OrderDetailScreen from "../Screens/OrderDetailScreen/OrderDetailScreen";
 import { useSelector } from "react-redux";
-import PendingOrderScreen from "../Screens/PendingOrders/PendingOrderScreen";
-import CompletedOrderScreen from "../Screens/CompletedOrders/CompletedOrderScreen";
 import SendNotification from "../Screens/SendNotification/SendNotification";
 import ErrorPage from "../Screens/ErrorPage/ErrorPage";
 import ChatScreen from "../Screens/ChatScreen/ChatScreen";
@@ -41,30 +37,6 @@ function Routess() {
 				}
 			/>
 			<Route
-				path='/orders'
-				element={
-					<ProtectedRoute>
-						<OrderScreen />
-					</ProtectedRoute>
-				}
-			/>
-			<Route
-				path='/completed_order'
-				element={
-					<ProtectedRoute>
-						<CompletedOrderScreen />
-					</ProtectedRoute>
-				}
-			/>
-			<Route
-				path='/pending_orders'
-				element={
-					<ProtectedRoute>
-						<PendingOrderScreen />
-					</ProtectedRoute>
-				}
-			/>
-			<Route
 				path='/send_alert'
 				element={
 					<ProtectedRoute>
@@ -80,14 +52,7 @@ function Routess() {
 					</ProtectedRoute>
 				}
 			/>
-			<Route
-				path='/order/:id'
-				element={
-					<ProtectedRoute>
-						<OrderDetailScreen />
-					</ProtectedRoute>
-				}
-			/>
+
 			<Route
 				path='/chat/:id'
 				element={
