@@ -11,13 +11,15 @@ function SendNotification() {
 	const { mytokens } = useSelector((state) => state.project);
 	const adduserfunc = async (e) => {
 		e.preventDefault();
-		const rest = await axios.post(`https://exp.host/--/api/v2/push/send`, {
-			to: mytokens,
-			title: formSubmit.title,
-			body: formSubmit.msg,
-		});
-		console.log(rest);
-		if (rest.status === 200) {
+		const resp = await axios.post(
+			"https://gambleappnotifications.herokuapp.com/notification",
+			{
+				name: formSubmit.title,
+				body: formSubmit.msg,
+			}
+		);
+		console.log("resp", resp);
+		if (resp.data.msg === "Sucesfull") {
 			alert("Notification sent");
 			setformSubmit({
 				title: "",
